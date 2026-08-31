@@ -2,14 +2,16 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Portafolio</title>
+        <title>Portafolio - Cristopher Roa</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
 
-    <body>
-        <!-- Encabezado-->
-        <header>
+    <body class="bg-gray-100 text-gray-800 antialiased">
+        <!-- Encabezado / Navegación -->
+        <header class="bg-gray-800 text-white shadow-md">
+            <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
+            <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
             <nav class="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div class="relative flex h-16 items-center justify-between">
@@ -28,13 +30,15 @@
                 </div>
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex shrink-0 items-center">
+                    <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" class="h-8 w-auto" />
                     </div>
                     <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
                         <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                        <a href="#cv" aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white">CV</a>
-                        <a href="#portafolio" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-                        <a href="#contacto" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contacto</a>
+                        <a href="#" aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white">Dashboard</a>
+                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
+                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
                     </div>
                     </div>
                 </div>
@@ -52,7 +56,7 @@
                     <button class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                         <span class="absolute -inset-1.5"></span>
                         <span class="sr-only">Open user menu</span>
-                        <img src="./assets/img/Logo-portafolio.png" alt="" class="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10" />
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10" />
                     </button>
 
                     <el-menu anchor="bottom end" popover class="w-48 origin-top-right rounded-md bg-gray-800 py-1 outline -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
@@ -76,55 +80,63 @@
             </el-disclosure>
             </nav>
 
-
-
-            <img src="Logo-portafolio.png" alt="Foto de portada" width="300"> 
         </header>
 
-        <!--Seccion 1 cv-->
-        <section id="cv">
-            <h2>Curriculum Vitae</h2>
-            <div class="texto cv">
-                <p>Como persona natural he trabajado como garzón en un hotel/spa de pirque. <br>
-                    También he trabajado como vendedor de mall multifucional:</p>
-                <ul>
-                    <li>Atencion al cliente</li>
-                    <li>Apertura y cierre de caja</li>
-                    <li>Reponedor</li>
-                    <li>Anfitrión</li>
-                </ul> 
-            </div>
-        </section>
+        <!-- Contenedor principal -->
+        <main class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-8">
+            
+            <!-- Sección CV -->
+            <section id="cv" class="rounded-lg bg-white p-6 shadow-sm border border-gray-200">
+                <h2 class="mb-4 text-2xl font-bold text-gray-900 border-b pb-2 border-gray-100">Curriculum Vitae</h2>
+                <div class="text-gray-700">
+                    <p class="mb-4">Como persona natural he trabajado como garzón en un hotel/spa de Pirque.<br>
+                    También he trabajado como vendedor de mall multifuncional desempeñando las siguientes funciones:</p>
+                    <ul class="ml-5 list-disc space-y-2">
+                        <li>Atención al cliente</li>
+                        <li>Apertura y cierre de caja</li>
+                        <li>Reponedor</li>
+                        <li>Anfitrión</li>
+                    </ul> 
+                </div>
+            </section>
 
-        <section id="portafolio">
-            <h2>Mis proyectos</h2>
-            <div class="mis-proyectos">
-                <p>A lo largo de la carrera he realizado una vairedad de proyectos como: <br></p>
-                <ul>
-                    <li>Cree menus interactivos por terminal</li>
-                    <li>Programacion backend, API de deportes</li>
-                    <li>Creacion de graficos para anailzar datos</li>
-                </ul>
+            <!-- Sección Proyectos -->
+            <section id="portafolio" class="rounded-lg bg-white p-6 shadow-sm border border-gray-200">
+                <h2 class="mb-4 text-2xl font-bold text-gray-900 border-b pb-2 border-gray-100">Mis Proyectos</h2>
+                <div class="text-gray-700">
+                    <p class="mb-4">A lo largo de la carrera he realizado una variedad de proyectos como:</p>
+                    <ul class="ml-5 list-disc space-y-2">
+                        <li>Creación de menús interactivos por terminal</li>
+                        <li>Programación backend, API de deportes</li>
+                        <li>Creación de gráficos para analizar datos</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Sección Tecnologías -->
+            <section class="rounded-lg bg-white p-6 shadow-sm border border-gray-200">
+                <h2 class="mb-4 text-2xl font-bold text-gray-900 border-b pb-2 border-gray-100">Tecnologías</h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-800">Python</span>
+                    <span class="rounded-full bg-orange-100 px-4 py-2 text-sm font-semibold text-orange-800">HTML</span>
+                    <span class="rounded-full bg-red-100 px-4 py-2 text-sm font-semibold text-red-800">Java</span>
+                    <span class="rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-800">Spring Boot</span>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Pie de página / Contacto -->
+        <footer id="contacto" class="bg-gray-800 py-8 text-white">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 class="mb-4 text-xl font-bold">Información de contacto</h2>
+                <div class="space-y-2 text-gray-300">
+                    <p><strong class="text-white">Teléfono:</strong> <a href="tel:+56964532145" class="hover:text-white hover:underline">+56 9 6453 2145</a></p>
+                    <p><strong class="text-white">Instagram:</strong> <a href="https://www.instagram.com/cr1st.0ph/" target="_blank" class="hover:text-white hover:underline">@Cr1st.0ph</a></p>
+                    <p><strong class="text-white">Email:</strong> <a href="mailto:cr.roam@duocuc.cl" class="hover:text-white hover:underline">cr.roam@duocuc.cl</a></p>
+                    <p class="pt-4 text-xs text-gray-400 border-t border-gray-700">© Cristopher Roa Medel. Todos los derechos reservados.</p>
+                </div>
             </div>
-        </section>
-        <section>
-            <h2>Tecnologias</h2>
-            <ul>
-                <li>Python</li>
-                <li>HTML</li>
-                <li>Java</li>
-                <li>Spring boot</li>
-            </ul>
-        </section>
-        <footer id="contacto">
-            <div class="footer">
-                <h2>Información de contacto</h2>
-                <p>Derechos de autor: Cristopher Roa Medel</p>
-                <!--Enlaces cliqueables-->
-                <p>Contacto : <a href="tel: 56964532145">+56 9 6453 2145</a></p>
-                <p>Instagram: <a href="https://www.instagram.com/cr1st.0ph/">@Cr1st.0ph</a></p>
-                <p>Email: <a href="cr.roam@duocuc.cl">cr.roam@duocuc.cl</a></p>
-            </div>
-        </footer>  
+        </footer>
     </body>
 </html>
