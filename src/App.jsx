@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState } from 'react' // observador
+import heroImg from './assets/hero.png' // variables que guardan constante
+import reactLogo from './assets/react.svg' // Guardar una ruta de imagen en una variable para poder usarla en el componente
+import viteLogo from './assets/vite.svg' 
+import './App.css' // se comporta diferente que otro css, uso de & lo que lo hace anidado, ccs cascada, distinto de index.css
+import Footer from './core/Footer.jsx' // importacion de componente Footer
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <> //etiqueta anonima, no genera un nodo en el DOM, sirve para agrupar elementos, html que se compila, para tag div se usa clasName
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -115,6 +116,7 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+      <Footer />
     </>
   )
 }
