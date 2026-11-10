@@ -1,10 +1,64 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV-webste</title>
+
+    <title>Cristopher Roa Medel | Desarrollador Web</title>
+    <meta
+      name="description"
+      content="Portafolio y CV de Cristopher Roa Medel, desarrollador web. Proyectos de backend, APIs y análisis de datos con Python, Java y Spring Boot."
+    />
+    <meta name="author" content="Cristopher Roa Medel" />
+    <meta id="theme-color" name="theme-color" content="#f8fafc" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:title" content="Cristopher Roa Medel | Desarrollador Web" />
+    <meta
+      property="og:description"
+      content="Portafolio y CV de Cristopher Roa Medel: proyectos de desarrollo web, backend y visualización de datos."
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <script>
+      // Aplica el tema antes del primer render para evitar un destello de
+      // colores incorrectos. Si no hay preferencia guardada, usa la del sistema.
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          var isDark = stored === 'dark' || (stored !== 'light' && prefersDark)
+
+          document.documentElement.classList.toggle('dark', isDark)
+          document.documentElement.style.colorScheme = isDark ? 'dark' : 'light'
+
+          var themeColor = document.getElementById('theme-color')
+          if (themeColor) {
+            themeColor.setAttribute('content', isDark ? '#020617' : '#f8fafc')
+          }
+        } catch (error) {
+          // Si localStorage no está disponible, se usa el tema del sistema.
+        }
+      })()
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cristopher Roa Medel",
+        "jobTitle": "Desarrollador Web",
+        "email": "mailto:cr.roam@duocuc.cl",
+        "telephone": "+56 9 6453 2145",
+        "url": "https://cr1stoph.github.io",
+        "sameAs": [
+          "https://github.com/Cr1stoph",
+          "https://www.instagram.com/cr1st.0ph/"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

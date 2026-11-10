@@ -1,22 +1,25 @@
-import { useState } from 'react' // observador
-import heroImg from './assets/hero.png' // variables que guardan constante
-import reactLogo from './assets/react.svg' // Guardar una ruta de imagen en una variable para poder usarla en el componente
-import viteLogo from './assets/vite.svg' 
-import './App.css' // se comporta diferente que otro css, uso de & lo que lo hace anidado, ccs cascada, distinto de index.css
-import Footer from './core/Footer.jsx' // importacion de componente Footer
-import Header from './core/Header.jsx' // importacion de componente Header
-import Main from './core/Main.jsx' // importacion de componente Main
+import Footer from './core/Footer.jsx'
+import Header from './core/Header.jsx'
+import Main from './core/Main.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-//<!-- etiqueta anonima, no genera un nodo en el DOM, sirve para agrupar elementos, html que se compila, para tag div se usa clasName -->
   return (
-    <> 
+    <div className="flex min-h-screen flex-col bg-slate-50 text-slate-800 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-200">
+      <a
+        href="#contenido"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-900 focus:shadow-lg focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 dark:focus:bg-slate-900 dark:focus:text-white"
+      >
+        Saltar al contenido
+      </a>
+
       <Header />
-      <Main />
-    
+
+      <main id="contenido" className="flex-1">
+        <Main />
+      </main>
+
       <Footer />
-    </>
+    </div>
   )
 }
 

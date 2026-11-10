@@ -1,19 +1,51 @@
-# React + Vite
+# Portafolio y CV — Cristopher Roa Medel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio personal de portafolio y currículum construido con **React 19**, **Vite** y **Tailwind CSS 4**. Incluye modo claro/oscuro, navegación con sección activa, menú móvil y una versión imprimible del CV.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Modo claro y oscuro** con las siguientes reglas:
+  - Si es la primera visita, se usa la preferencia del sistema (`prefers-color-scheme`).
+  - Al usar el botón del header, la elección se guarda en `localStorage` y se mantiene.
+  - Un script mínimo en `index.html` aplica el tema antes del primer render para evitar el destello de colores.
+- **Navegación responsive** con menú móvil y resaltado de la sección visible.
+- **Secciones**: inicio, sobre mí, experiencia, proyectos, tecnologías y contacto.
+- **CV imprimible**: el botón «Descargar CV» abre el diálogo de impresión y fuerza el tema claro para exportar a PDF.
+- **Accesibilidad**: enlaces de salto, etiquetas ARIA, foco visible, `aria-current` y respeto por `prefers-reduced-motion`.
+- **SEO**: metadatos, Open Graph y datos estructurados `Person` (JSON-LD).
 
-## React Compiler
+## Scripts
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```bash
+npm install      # instalar dependencias
+npm run dev      # servidor de desarrollo
+npm run build    # compilar para producción
+npm run preview  # previsualizar la compilación
+npm run lint     # revisar el código con ESLint
+```
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## Estructura
 
-## Expanding the ESLint configuration
+```
+src/
+├── components/
+│   └── icons.jsx          # iconos SVG reutilizables
+├── core/
+│   ├── Header.jsx         # navegación, menú móvil y botón de tema
+│   ├── Main.jsx           # secciones del portafolio
+│   └── Footer.jsx         # enlaces sociales y créditos
+├── data/
+│   └── portfolio.js       # contenido editable del CV y portafolio
+├── hooks/
+│   ├── useActiveSection.js
+│   └── useTheme.js
+├── App.jsx
+├── index.css              # Tailwind + estilos base, animaciones e impresión
+└── main.jsx
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+El contenido (bio, experiencia, proyectos, tecnologías y contacto) está centralizado en `src/data/portfolio.js`, así que puedes actualizarlo sin tocar los componentes.
+
+## Despliegue
+
+El proyecto está pensado para publicarse en GitHub Pages como sitio de usuario (`https://cr1stoph.github.io`). Genera la build con `npm run build` y publica el contenido de `dist/`.
